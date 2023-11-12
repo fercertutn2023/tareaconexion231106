@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col">
+        <h4>Modificar una novedad</h4>
+        <form action="/admin/novedades/modificar" method="post">
+            <input type="hidden" value="{{novedad.id}}" name="id">
+            <div clas="col">
+                <input type="text" class="form-control" placeholder="Compañía" name="compañia"
+                    value="{{novedad.compañia}}">
+            </div>
+            <div class="col">
+                <textarea name="titulo" class="form-control" placeholder="titulo"> {{novedad.titulo}}</textarea>
+            </div>
+            <div class="col">
+                <textarea name="desarrollo" class="form-control" placeholder="desarrollo"> {{novedad.desarrollo}}</textarea>
+            </div>
+            <button type="submit" class="btn btn- primary">Modificar</button>
+        </form>
+        {{#if error}}
+        <p>{{message}} - No se ingreso la modificacion</p>
+        {{/if}}
+    </div>
+</div>

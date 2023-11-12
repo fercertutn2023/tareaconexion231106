@@ -1,0 +1,52 @@
+
+
+    <div class="container">
+        <div class="row">
+            <p class="bienvenida">¡Hola {{ usuario }} !</p>
+            <a class="logout-link" href="/admin/login/Logout">
+                Cerrar sesión <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-9">
+            <h3>Listado de Novedades</h3>
+        </div>
+        <div class="col-3 text-end">
+            <a class="btn btn-success" href="/admin/novedades/agregar"><i class="fa fa-plus" aria-hidden="true"></i>
+                Nuevo</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col" style="width: 10%">#</th>
+                        <th scope="col" style="width: 15%";>Compañía</th>
+                        <th scope="col" style="width: 20%";>Titulo</th>
+                        <th scope="col" style="width: 45%">Desarrollo</th>
+                        <th class="text-end" style="width: 10%">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each novedades}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{compañia}}</td>
+                        <td>{{titulo}}</td>
+                        <td>{{desarrollo}}</td>
+                        <td class="text-end">
+                            <a class="btn btn-secondary" href="/admin/novedades/modificar/{{id}}">
+                                <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a class="btn btn-secondary" href="/admin/novedades/eliminar/{{id}}">
+                                <i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
